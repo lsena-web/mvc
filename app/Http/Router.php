@@ -52,8 +52,9 @@ class Router
         // INFORMAÇÕES DA URL ATUAL
         $parseUrl = parse_url($this->url);
 
-        // DEFINE PRFIXO
+        // DEFINE PREFIXO
         $this->prefix = $parseUrl['path'] ?? '';
+
     }
 
     /**
