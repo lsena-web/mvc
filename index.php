@@ -7,7 +7,7 @@ use App\Utils\View;
 
 define('URL', 'http://localhost/mvc');
 
-// DEFINE O VALOR PADRÃO DAS VARIAVEIS
+// DEFINE O VALOR PADRÃO DAS VARIAVEIS obs: usado nos botões
 View::init([
     'URL' => URL
 ]);

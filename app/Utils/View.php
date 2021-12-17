@@ -43,7 +43,7 @@ class View
         // CONTEÚDO DA VIEW
         $contentView = self::getContentView($view);
 
-
+        // MERGE DE VARIAVEIS DA VIEW
         $vars = array_merge(self::$vars, $vars);
 
         // CHAVES DO ARRAY DE VARIÁVEIS

@@ -85,7 +85,7 @@ class Router
             $params['variables'] = $matches[1];
         }
 
-        // PADRÃO DE VALIDÇÃO DA URL
+        // PADRÃO DE VALIDAÇÃO DA URL
         $patternRoute = '/^' . str_replace('/', '\/', $route) . '$/';
 
         // ADICIONA ROTA DENTRO DA CLASSE
@@ -133,7 +133,7 @@ class Router
                     // REMOVE A PRIMEIRA POSIÇÃO
                     unset($matches[0]);
 
-                    // VARIAÁVEIS PROCESSADAS
+                    // VARIÁVEIS PROCESSADAS
                     $keys = $methods[$httpMethod]['variables'];
                     $methods[$httpMethod]['variables'] = array_combine($keys, $matches);
                     $methods[$httpMethod]['variables']['request'] = $this->request;
