@@ -1,7 +1,7 @@
 <?php
 
 use \App\Http\Response;
-use \App\Controller\Pages;
+use \App\Controller\Pages;  
 
 
 // ROTA HOME
