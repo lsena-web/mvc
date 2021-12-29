@@ -38,7 +38,7 @@ class Router
      */
     public function __construct($url)
     {
-        $this->request = new Request();
+        $this->request = new Request($this);
         $this->url     = $url;
         $this->setPrefix();
     }
@@ -54,7 +54,6 @@ class Router
 
         // DEFINE PREFIXO
         $this->prefix = $parseUrl['path'] ?? '';
-
     }
 
     /**
@@ -220,5 +219,14 @@ class Router
     public function delete($route, $params = [])
     {
         return $this->addRoute('DELETE', $route, $params);
+    }
+
+    /**
+     * Método responsável por retornar a URL atual
+     * @return string
+     */
+    public function getCurrentUrl()
+    {
+        return $this->url . $this->getUri();
     }
 }
