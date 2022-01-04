@@ -13,7 +13,7 @@ class View
     private static $vars = [];
 
     /**
-     * Mátodo responsável por por definir os dados iniciais da classe
+     * Método responsável por por definir os dados iniciais da classe
      * @param array
      */
     public static function init($vars = [])
@@ -50,7 +50,9 @@ class View
         // P1 FUNÇÃO CALLBACK QUE SERÁ EXECUTADA EM CADA ELEMENTO DO ARRAY
         // P2 ARRAY A SER PECORRIDO 
         $keys = array_keys($vars);
+
         $keys = array_map(function ($item) {
+
             return '{{' . $item . '}}';
         }, $keys);
 

@@ -159,6 +159,7 @@ class Router
             // OBTÉM A ROTA ATUAL
             $route = $this->getRoute();
 
+
             // VERIFICA O CONTROLADOR
             if (!isset($route['controller'])) {
                 throw new Exception("A URL não pôde ser processada", 500);

@@ -43,10 +43,11 @@ class Request
 
     /**
      * Construtor da classe
+     * @param Router $router
      */
     public function __construct($router)
     {
-        $this->router       =  $router;
+        $this->router       = $router;
         $this->queryParams  = $_GET ?? []; // se não existir fica vazio
         $this->postVars     = $_POST ?? []; // se não existir fica vazio
         $this->headers      = getallheaders();

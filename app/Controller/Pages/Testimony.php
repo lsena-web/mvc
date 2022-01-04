@@ -11,7 +11,7 @@ class Testimony extends Page
     /**
      * Método responsável por obter a renderização dos itens de depoimentos para a página
      * @param Request $request
-     * @param Pagination $obPagination
+     * @param Pagination $obPagination https://www.php.net/manual/pt_BR/functions.arguments.php passagem por referencia
      * @return string 
      */
     private static function getTestimonyItems($request, &$obPagination)
@@ -48,7 +48,7 @@ class Testimony extends Page
 
     /**
      * Método responsável por retornar o conteúdo view da nossa home
-     * @param Request $request
+     * @param Request $request  routes/pages.php
      * @return string
      */
     public static function getTestimonies($request)
