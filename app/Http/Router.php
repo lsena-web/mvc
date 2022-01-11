@@ -5,6 +5,7 @@ namespace App\Http;
 use \Closure; //Classe usada para representar funções anônimas.
 use \Exception;
 use \ReflectionFunction;
+use \App\Http\Middleware\Queue as MiddleawareQueue;
 
 class Router
 {
@@ -72,6 +73,9 @@ class Router
                 continue;
             }
         }
+
+        // MIDDLEWARES DA ROTA
+        $params['middlewares'] = $params['middlewares'] ?? [];
 
         // VARIÁVEIS DA ROTA
         $params['variables'] = [];
@@ -175,8 +179,9 @@ class Router
                 $args[$name] = $route['variables'][$name] ?? '';
             }
 
-            // RETORNA A EXECUÇÃO DA FUNÇÃO
-            return call_user_func_array($route['controller'], $args);
+
+            // RETORNAR A EXECUÇÃO DA FILA DE MIDDLEWARES
+            return (new MiddleawareQueue($route['middlewares'], $route['controller'], $args))->next($this->request);
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
